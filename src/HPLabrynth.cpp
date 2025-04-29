@@ -37,7 +37,7 @@ namespace HPOpts {
          * Just Add _PRETTY if it is a prettyfyable mode
          *
          * @m the mode to prettify
-         * @return the mode prettifyed or itsefl
+         * @return the mode prettifyed or itself
          */
         switch (m) {
             case CHECK: return CHECK_PRETTY;
@@ -48,6 +48,12 @@ namespace HPOpts {
     }
 
     Modes filefy(Modes m) {
+        /**
+          * Just Add _FILE if it is a "to file"able mode
+          *
+          * @m the mode to filefy
+          * @return the mode filefyed or itself
+          */
         switch (m) {
             case RANDOM_CMD: return RANDOM_CMD_FILE;
             case RANDOM_INPUT: return RANDOM_INPUT_FILE;
@@ -56,7 +62,9 @@ namespace HPOpts {
     }
 
     ModeOpts getMode(int argc, char *argv[]) {
-
+        /**
+          * Big Logic Handler for CMD options
+           */
         int option_index = 0;
         const ModeOpts help_choice = {HELP,"",""};
         int asked_help=0,asked_pretty=0,asked_fout=0,asked_skip=0;
@@ -136,8 +144,8 @@ namespace HPOpts {
             if (asked_skip) return help_choice;
             if (asked_fout && asked_pretty) return help_choice;
 
-            if (asked_fout) return {filefy(curr_mode),params,ofn};
-            if (asked_pretty) return {prettyfy(curr_mode),params,""};
+            if (asked_fout) return {filefy(curr_mode),"",ofn};
+            if (asked_pretty) return {prettyfy(curr_mode),"",""};
             return {curr_mode,params,""};
         }
         return help_choice;

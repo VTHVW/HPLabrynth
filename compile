@@ -1,3 +1,8 @@
-g++ -std=c++20 -c HPLabrynth.cpp -o HPLabrynth.o
-g++ -std=c++20 -c main.cpp -o main.o
-g++ -std=c++20 main.o HPLabrynth.o -o HPLabrynth
+#! /bin/zsh
+SRC="./src/";
+BIN="./bin/";
+
+g++ -std=c++20 -c $SRC"HPLabrynth.cpp" -o $BIN".HPLabrynth.o"
+g++ -std=c++20 -c $SRC"HPLabMain.cpp" -o $BIN".main.o"
+g++ -std=c++20 $BIN".main.o" $BIN".HPLabrynth.o" -o $BIN"HPLabrynth"
+

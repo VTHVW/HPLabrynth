@@ -96,6 +96,7 @@ namespace HPLabrynth {
         unsigned i;
         unsigned j;
     };
+
     std::ostream &operator<<(std::ostream &os, LabCoords &elem);
     bool operator==(const LabCoords &el1,const LabCoords &el2);
     std::ifstream &operator>>(std::ifstream &is, LabCoords &elem);
@@ -137,11 +138,8 @@ namespace HPLabrynth {
 
     private:
         void makeSet(LabCoords elem, bool is_valid);
-
         void link(LabCoords el1, LabCoords el2);
-
         LabCoords find(LabCoords el);
-
         void unite(const LabCoords &el1, const LabCoords &el2);
     };
 
