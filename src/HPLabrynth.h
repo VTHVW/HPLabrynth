@@ -25,9 +25,11 @@
 #ifndef HPLABRYNTH_H
 #define HPLABRYNTH_H
 
+/* colors for pretty output */
 #define RedFG "\033[0;31m"
 #define BoldGreenFG "\033[1;32m"
 #define ResetColor "\033[0m"
+
 #include <iostream>
 
 

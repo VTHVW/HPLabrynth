@@ -1,0 +1,3 @@
+g++ -std=c++20 -c HPLabrynth.cpp -o HPLabrynth.o
+g++ -std=c++20 -c main.cpp -o main.o
+g++ -std=c++20 main.o HPLabrynth.o -o HPLabrynth
