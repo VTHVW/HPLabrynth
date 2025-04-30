@@ -1,0 +1,7 @@
+#! /bin/zsh
+
+for i in `ls ./files/auto/*`; do
+    echo -e "$i:\n"
+    ./bin/HPLabrynth --check="$i" --pretty
+done
+
