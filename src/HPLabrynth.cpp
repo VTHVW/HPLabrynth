@@ -302,7 +302,7 @@ namespace HPLabrynth {
         for (unsigned i = 0; i < M; i++) {
             for (unsigned j = 0; j < N; j++) {
                 LabCoords cur{i,j};
-                makeSet(cur,(std::rand() < RAND_MAX/2) || cur == this->end || cur == this->start);
+                makeSet(cur,(std::rand() < 3*(RAND_MAX/4)) || cur == this->end || cur == this->start);
             }
         }
 
